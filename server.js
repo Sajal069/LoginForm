@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 // Sample user data (replace with a database query)
 
-const API_URL = "http://localhost:4000";
+const API_URL = "https://login-page-api-xhwy.onrender.com";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
