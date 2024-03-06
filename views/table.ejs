@@ -1,0 +1,78 @@
+<!-- views/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Data</title>
+    <style>
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin:5px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      tr:hover {
+        background-color: #f1f1f1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Data</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Role</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(user => { %>
+        <tr>
+          <td><%= user.userid %></td>
+          <td><%= user.role %></td>
+          <td><%= user.password_hash %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+
+    <form action="/again" method="get" id="fetchAgainForm">
+      <button
+        type="submit"
+        id="fetch_again"
+      >
+        Fetch Again
+      </button>
+    </form>
+  </body>
+</html>
